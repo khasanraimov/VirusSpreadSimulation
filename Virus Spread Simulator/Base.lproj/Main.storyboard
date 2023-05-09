@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,159 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Virus_Spread_Simulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atr-dY-pED">
+                                <rect key="frame" x="74" y="614" width="227" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Запустить моделирование"/>
+                                <connections>
+                                    <action selector="startSimulator:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HCe-4J-Bao"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="количество людей в моделируемой группе" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jih-9R-oUs">
+                                <rect key="frame" x="16" y="49" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="groupSize:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="0Mk-rl-df1"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GroupSize" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GYE-5g-2hk">
+                                <rect key="frame" x="16" y="20" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="InfectionFactor" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ts-OJ-OCz">
+                                <rect key="frame" x="16" y="87" width="115" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="количество людей котрое может быть заражено одним человек при контакте" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tff-Of-1QN">
+                                <rect key="frame" x="16" y="115.5" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="infectionFactor:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="BQW-wy-poW"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="T( в секундах )" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80f-wy-Hjx">
+                                <rect key="frame" x="16" y="153.5" width="119" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="период пересчёта количества заражённых людей" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YV1-Y6-qd7">
+                                <rect key="frame" x="16" y="182" width="343" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="timeInSeconds:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="ahq-s5-POE"/>
+                                </connections>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Ts-OJ-OCz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3cg-P8-cLw"/>
+                            <constraint firstItem="GYE-5g-2hk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3uL-Iu-DEN"/>
+                            <constraint firstItem="jih-9R-oUs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="67Z-Qe-Uch"/>
+                            <constraint firstItem="80f-wy-Hjx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="6me-Tb-gZa"/>
+                            <constraint firstItem="YV1-Y6-qd7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="FTx-k0-JNM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="atr-dY-pED" secondAttribute="trailing" constant="74" id="Fsv-YM-Jy5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="YV1-Y6-qd7" secondAttribute="trailing" constant="16" id="JY0-NZ-LWz"/>
+                            <constraint firstItem="YV1-Y6-qd7" firstAttribute="top" secondItem="80f-wy-Hjx" secondAttribute="bottom" constant="8" id="MQ8-Jd-9yu"/>
+                            <constraint firstItem="80f-wy-Hjx" firstAttribute="top" secondItem="tff-Of-1QN" secondAttribute="bottom" constant="8" id="T7V-MD-RWn"/>
+                            <constraint firstItem="tff-Of-1QN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="XHG-E8-UpF"/>
+                            <constraint firstItem="GYE-5g-2hk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="e80-WD-DIR"/>
+                            <constraint firstItem="atr-dY-pED" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="74" id="jEm-Dk-cYz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="atr-dY-pED" secondAttribute="bottom" constant="20" id="k2r-a9-SwJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jih-9R-oUs" secondAttribute="trailing" constant="16" id="ng6-1I-alA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tff-Of-1QN" secondAttribute="trailing" constant="16" id="p5p-M0-NFJ"/>
+                            <constraint firstItem="tff-Of-1QN" firstAttribute="top" secondItem="6Ts-OJ-OCz" secondAttribute="bottom" constant="8" id="ud4-zX-Xhw"/>
+                            <constraint firstItem="jih-9R-oUs" firstAttribute="top" secondItem="GYE-5g-2hk" secondAttribute="bottom" constant="8" id="voP-9c-x3M"/>
+                            <constraint firstItem="6Ts-OJ-OCz" firstAttribute="top" secondItem="jih-9R-oUs" secondAttribute="bottom" constant="8" id="wkq-lD-6Uj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <segue destination="ata-W0-TEU" kind="presentation" identifier="SimulationViewController" id="7Z8-Nf-Oxs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-105" y="134"/>
+        </scene>
+        <!--Simulation View Controller-->
+        <scene sceneID="gDO-yw-YDz">
+            <objects>
+                <viewController storyboardIdentifier="SimulationViewController" id="ata-W0-TEU" customClass="SimulationViewController" customModule="Virus_Spread_Simulator" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JAR-8P-zrD">
+                        <rect key="frame" x="0.0" y="0.0" width="1375" height="1667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-B5-T2q">
+                                <rect key="frame" x="0.0" y="20" width="1375" height="1647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5C-Gn-MO3">
+                                        <rect key="frame" x="0.0" y="0.0" width="1373" height="1647"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qom-Cf-kWp">
+                                                <rect key="frame" x="9" y="8" width="45" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" title="Назад"/>
+                                                <connections>
+                                                    <action selector="goBack:" destination="ata-W0-TEU" eventType="touchUpInside" id="4Zj-Uf-LD9"/>
+                                                </connections>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="O" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qXc-mw-8jW">
+                                                <rect key="frame" x="166" y="977" width="13" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="G5C-Gn-MO3" secondAttribute="trailing" id="2PP-Yk-Zh2"/>
+                                    <constraint firstItem="G5C-Gn-MO3" firstAttribute="leading" secondItem="jPg-B5-T2q" secondAttribute="leading" id="4Mo-SY-cIs"/>
+                                    <constraint firstItem="G5C-Gn-MO3" firstAttribute="top" secondItem="jPg-B5-T2q" secondAttribute="top" id="wkm-sL-5fd"/>
+                                    <constraint firstAttribute="bottom" secondItem="G5C-Gn-MO3" secondAttribute="bottom" id="xui-fW-gz1"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jPg-B5-T2q" firstAttribute="trailing" secondItem="JP2-RT-j9F" secondAttribute="trailing" id="2wM-jm-qac"/>
+                            <constraint firstItem="jPg-B5-T2q" firstAttribute="leading" secondItem="JP2-RT-j9F" secondAttribute="leading" id="DS2-Pq-ohf"/>
+                            <constraint firstItem="jPg-B5-T2q" firstAttribute="bottom" secondItem="JP2-RT-j9F" secondAttribute="bottom" id="FF1-Au-g8y"/>
+                            <constraint firstItem="jPg-B5-T2q" firstAttribute="top" secondItem="JP2-RT-j9F" secondAttribute="top" id="GkR-Hd-VB5"/>
+                            <constraint firstItem="jPg-B5-T2q" firstAttribute="top" secondItem="JP2-RT-j9F" secondAttribute="top" id="feP-dU-TMp"/>
+                            <constraint firstItem="jPg-B5-T2q" firstAttribute="trailing" secondItem="JP2-RT-j9F" secondAttribute="trailing" id="kXo-FT-xB8"/>
+                            <constraint firstItem="jPg-B5-T2q" firstAttribute="bottom" secondItem="JP2-RT-j9F" secondAttribute="bottom" id="qOD-Ub-NnA"/>
+                            <constraint firstItem="jPg-B5-T2q" firstAttribute="leading" secondItem="JP2-RT-j9F" secondAttribute="leading" id="rzf-UA-a3n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JP2-RT-j9F"/>
+                    </view>
+                    <size key="freeformSize" width="1375" height="1667"/>
+                    <connections>
+                        <outlet property="scrollView" destination="jPg-B5-T2q" id="aOi-ct-NKP"/>
+                        <outlet property="simulationView" destination="G5C-Gn-MO3" id="1hB-YR-brz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="30x-ub-4g5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1901.5999999999999" y="244.22788605697153"/>
         </scene>
     </scenes>
 </document>
