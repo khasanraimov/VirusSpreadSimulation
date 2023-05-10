@@ -15,11 +15,18 @@ class Person {
 
 class SimulationViewController: UIViewController {
     
+    var count: Int?
+
+    
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var simulationView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let count = count {
+            addLabels(count: count, container: simulationView)
+        }
+        
         
         scrollView.contentSize = simulationView.frame.size
         let pinchGesture = UIPinchGestureRecognizer(target: self, action: #selector(pinchGestureAction(sender:)))
@@ -27,6 +34,12 @@ class SimulationViewController: UIViewController {
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panGestureAction(sender:)))
         scrollView.addGestureRecognizer(panGesture)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func labelTapped(_ sender: UITapGestureRecognizer) {
+        if let label = sender.view as? UILabel {
+            label.backgroundColor = UIColor.red // Изменяем цвет фона на красный
+        }
     }
 
     @IBAction func goBack(_ sender: Any) {
@@ -47,4 +60,33 @@ class SimulationViewController: UIViewController {
         scrollView.contentOffset.y -= translation.y
         sender.setTranslation(CGPoint.zero, in: scrollView)
     }
+    
+    func addLabels(count: Int, container: UIView) {
+        var xPosition: CGFloat = 20
+        var yPosition: CGFloat = 20
+        let labelWidth: CGFloat = 30
+        let labelHeight: CGFloat = 30
+        
+        for i in 1...count {
+            let label = UILabel(frame: CGRect(x: xPosition, y: yPosition, width: labelWidth, height: labelHeight))
+            label.text = "O"
+            label.textAlignment = .center
+            
+            // Создаем UITapGestureRecognizer для label
+            let tapGestureRecognizer = UITapGestureRecognizer(target: label, action: #selector(labelTapped(_:)))
+            label.addGestureRecognizer(tapGestureRecognizer)
+            label.isUserInteractionEnabled = true
+            
+            container.addSubview(label)
+            
+            xPosition += labelWidth + 10 // Расстояние между элементами
+            if i % 10 == 0 {
+                xPosition = 20
+                yPosition += labelHeight + 10
+            }
+        }
+    }
+
 }
+
+

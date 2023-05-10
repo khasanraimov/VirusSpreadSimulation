@@ -28,6 +28,9 @@
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="количество людей в моделируемой группе" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jih-9R-oUs">
                                 <rect key="frame" x="16" y="49" width="343" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES"/>
+                                </accessibility>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -49,6 +52,9 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="количество людей котрое может быть заражено одним человек при контакте" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tff-Of-1QN">
                                 <rect key="frame" x="16" y="115.5" width="343" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -64,6 +70,9 @@
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="период пересчёта количества заражённых людей" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YV1-Y6-qd7">
                                 <rect key="frame" x="16" y="182" width="343" height="30"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES"/>
+                                </accessibility>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -96,6 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="textField" destination="jih-9R-oUs" id="weY-vA-cog"/>
                         <segue destination="ata-W0-TEU" kind="presentation" identifier="SimulationViewController" id="7Z8-Nf-Oxs"/>
                     </connections>
                 </viewController>
@@ -108,420 +118,50 @@
             <objects>
                 <viewController storyboardIdentifier="SimulationViewController" id="ata-W0-TEU" customClass="SimulationViewController" customModule="Virus_Spread_Simulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JAR-8P-zrD">
-                        <rect key="frame" x="0.0" y="0.0" width="1375" height="1667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jPg-B5-T2q">
-                                <rect key="frame" x="0.0" y="20" width="1375" height="1647"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MJi-7c-HDJ">
+                                <rect key="frame" x="0.0" y="59" width="375" height="608"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G5C-Gn-MO3">
-                                        <rect key="frame" x="0.0" y="0.0" width="1373" height="1647"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qom-Cf-kWp">
-                                                <rect key="frame" x="9" y="8" width="45" height="30"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" title="Назад"/>
-                                                <connections>
-                                                    <action selector="goBack:" destination="ata-W0-TEU" eventType="touchUpInside" id="4Zj-Uf-LD9"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="m3M-Vq-ttE">
-                                                <rect key="frame" x="241" y="133" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="0xf-Ei-cwu">
-                                                <rect key="frame" x="376" y="133" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="9dz-cq-OGu">
-                                                <rect key="frame" x="511" y="133" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="KBb-0V-LpN">
-                                                <rect key="frame" x="646" y="133" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="eJz-UG-EfQ">
-                                                <rect key="frame" x="781" y="133" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="VOC-Ga-R5I">
-                                                <rect key="frame" x="916" y="133" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="ueg-WY-jga">
-                                                <rect key="frame" x="1051" y="133" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="1cl-3v-wTb">
-                                                <rect key="frame" x="109" y="133" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="N7P-dr-5kB">
-                                                <rect key="frame" x="241" y="269" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="9Am-1d-i9Y">
-                                                <rect key="frame" x="376" y="269" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="2re-IX-C4B">
-                                                <rect key="frame" x="511" y="269" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="d0U-IW-yv6">
-                                                <rect key="frame" x="646" y="269" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="7Je-sg-otg">
-                                                <rect key="frame" x="781" y="269" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="vlG-4a-7bQ">
-                                                <rect key="frame" x="916" y="269" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="lav-Yr-SFQ">
-                                                <rect key="frame" x="1051" y="269" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="FwI-JE-k5r">
-                                                <rect key="frame" x="109" y="269" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="ve5-bZ-PuS">
-                                                <rect key="frame" x="241" y="405" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="vW9-Fq-lon">
-                                                <rect key="frame" x="376" y="405" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="Lpd-7Z-muV">
-                                                <rect key="frame" x="511" y="405" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="WQN-Xk-PhE">
-                                                <rect key="frame" x="646" y="405" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="KTF-ez-Iga">
-                                                <rect key="frame" x="781" y="405" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="EsW-VK-4Kp">
-                                                <rect key="frame" x="916" y="405" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="aou-R7-0Dr">
-                                                <rect key="frame" x="1051" y="405" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="x1i-e4-0F0">
-                                                <rect key="frame" x="109" y="405" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="rnP-xa-ETA">
-                                                <rect key="frame" x="241" y="541" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="IWh-3t-2rH">
-                                                <rect key="frame" x="376" y="541" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="Goc-SM-ckv">
-                                                <rect key="frame" x="511" y="541" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="n2N-fS-wLM">
-                                                <rect key="frame" x="646" y="541" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="YXI-uW-nz0">
-                                                <rect key="frame" x="781" y="541" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="IaH-a4-JLb">
-                                                <rect key="frame" x="916" y="541" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="TVi-q4-5Xl">
-                                                <rect key="frame" x="1051" y="541" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="vMg-rL-o9n">
-                                                <rect key="frame" x="109" y="541" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="hH5-vh-dEB">
-                                                <rect key="frame" x="241" y="677" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="9eg-0z-l0t">
-                                                <rect key="frame" x="376" y="677" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="g7U-uf-BW3">
-                                                <rect key="frame" x="511" y="677" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="s5f-gu-UNV">
-                                                <rect key="frame" x="646" y="677" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="lyN-IJ-Xm0">
-                                                <rect key="frame" x="781" y="677" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="NBa-uy-zUI">
-                                                <rect key="frame" x="916" y="677" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="qKu-3Z-UJY">
-                                                <rect key="frame" x="1051" y="677" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="g76-W5-Cpy">
-                                                <rect key="frame" x="109" y="677" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="Rwe-Zk-GU4">
-                                                <rect key="frame" x="241" y="813" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="yrl-Yc-Nd1">
-                                                <rect key="frame" x="376" y="813" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="dpw-W6-9sS">
-                                                <rect key="frame" x="511" y="813" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="Zph-5B-CLP">
-                                                <rect key="frame" x="646" y="813" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="T2k-HG-eSX">
-                                                <rect key="frame" x="781" y="813" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="yEv-mQ-UKn">
-                                                <rect key="frame" x="916" y="813" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="7Kq-ab-bb4">
-                                                <rect key="frame" x="1051" y="813" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="gb0-Jo-Ikq">
-                                                <rect key="frame" x="109" y="813" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="ETZ-vv-4KC">
-                                                <rect key="frame" x="241" y="949" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="MEq-0C-jzg">
-                                                <rect key="frame" x="376" y="949" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="9a4-DB-HeK">
-                                                <rect key="frame" x="511" y="949" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="W88-Qo-SAO">
-                                                <rect key="frame" x="646" y="949" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="H6O-3e-fWF">
-                                                <rect key="frame" x="781" y="949" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="JHf-Tj-uMT">
-                                                <rect key="frame" x="916" y="949" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="e97-cO-ZfJ">
-                                                <rect key="frame" x="1051" y="949" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="Vtw-Gp-Stc">
-                                                <rect key="frame" x="109" y="949" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="wZE-gj-rkm">
-                                                <rect key="frame" x="241" y="1085" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="eq8-bu-9B8">
-                                                <rect key="frame" x="376" y="1085" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="tZU-oo-bv3">
-                                                <rect key="frame" x="511" y="1085" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="pLG-JT-q7W">
-                                                <rect key="frame" x="646" y="1085" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="wtT-Kd-puK">
-                                                <rect key="frame" x="781" y="1085" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="6Kx-qm-edT">
-                                                <rect key="frame" x="916" y="1085" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="pZw-03-ss8">
-                                                <rect key="frame" x="1051" y="1085" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="wAz-zr-Kpf">
-                                                <rect key="frame" x="109" y="1085" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="IhB-Fx-jXm">
-                                                <rect key="frame" x="241" y="1221" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="hvI-Tw-SAl">
-                                                <rect key="frame" x="376" y="1221" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="NZm-CM-VJY">
-                                                <rect key="frame" x="511" y="1221" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="HA6-ea-JXk">
-                                                <rect key="frame" x="646" y="1221" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="aHG-yd-BkH">
-                                                <rect key="frame" x="781" y="1221" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="Glw-RA-Z0a">
-                                                <rect key="frame" x="916" y="1221" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="3ho-VM-ZnQ">
-                                                <rect key="frame" x="1051" y="1221" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="2t1-bz-oEZ">
-                                                <rect key="frame" x="109" y="1221" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="vWi-Qb-ir9">
-                                                <rect key="frame" x="241" y="1357" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="JbI-RS-pO6">
-                                                <rect key="frame" x="376" y="1357" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="MjX-mY-jES">
-                                                <rect key="frame" x="511" y="1357" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="Kad-tR-Pn3">
-                                                <rect key="frame" x="646" y="1357" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="E6U-KP-sPO">
-                                                <rect key="frame" x="781" y="1357" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="rQp-KY-nBr">
-                                                <rect key="frame" x="916" y="1357" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="oGD-s3-UoI">
-                                                <rect key="frame" x="1051" y="1357" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="bqT-jZ-USB">
-                                                <rect key="frame" x="109" y="1357" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="oaL-Nw-qGf">
-                                                <rect key="frame" x="1186" y="133" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="LCH-E5-DlU">
-                                                <rect key="frame" x="1186" y="269" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="RUL-qR-5d6">
-                                                <rect key="frame" x="1186" y="405" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="aI0-cf-fWS">
-                                                <rect key="frame" x="1186" y="541" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="DbX-hv-yIp">
-                                                <rect key="frame" x="1186" y="677" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="wwA-4U-jCA">
-                                                <rect key="frame" x="1186" y="813" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="2bs-jV-nQS">
-                                                <rect key="frame" x="1186" y="949" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="RmE-4P-AKT">
-                                                <rect key="frame" x="1186" y="1085" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="sz8-AQ-cFg">
-                                                <rect key="frame" x="1186" y="1221" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="fuck" translatesAutoresizingMaskIntoConstraints="NO" id="CB4-Y0-lue">
-                                                <rect key="frame" x="1186" y="1357" width="127" height="128"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                        </subviews>
+                                    <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cJk-oS-esh">
+                                        <rect key="frame" x="0.0" y="46" width="375" height="601"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="G5C-Gn-MO3" secondAttribute="trailing" id="2PP-Yk-Zh2"/>
-                                    <constraint firstItem="G5C-Gn-MO3" firstAttribute="leading" secondItem="jPg-B5-T2q" secondAttribute="leading" id="4Mo-SY-cIs"/>
-                                    <constraint firstItem="G5C-Gn-MO3" firstAttribute="top" secondItem="jPg-B5-T2q" secondAttribute="top" id="wkm-sL-5fd"/>
-                                    <constraint firstAttribute="bottom" secondItem="G5C-Gn-MO3" secondAttribute="bottom" id="xui-fW-gz1"/>
+                                    <constraint firstItem="cJk-oS-esh" firstAttribute="leading" secondItem="MJi-7c-HDJ" secondAttribute="leading" id="B9B-eZ-1VN"/>
+                                    <constraint firstItem="cJk-oS-esh" firstAttribute="top" secondItem="MJi-7c-HDJ" secondAttribute="top" id="Mqr-xx-dbH"/>
+                                    <constraint firstAttribute="bottom" secondItem="cJk-oS-esh" secondAttribute="bottom" id="Np0-km-Zb9"/>
+                                    <constraint firstAttribute="trailing" secondItem="cJk-oS-esh" secondAttribute="trailing" id="oR9-mQ-qIj"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bx-Ki-Z2e">
+                                <rect key="frame" x="17" y="21" width="45" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Назад"/>
+                                <connections>
+                                    <action selector="goBack:" destination="ata-W0-TEU" eventType="touchUpInside" id="Q7q-iF-cZx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="jPg-B5-T2q" firstAttribute="trailing" secondItem="JP2-RT-j9F" secondAttribute="trailing" id="2wM-jm-qac"/>
-                            <constraint firstItem="jPg-B5-T2q" firstAttribute="leading" secondItem="JP2-RT-j9F" secondAttribute="leading" id="DS2-Pq-ohf"/>
-                            <constraint firstItem="jPg-B5-T2q" firstAttribute="bottom" secondItem="JP2-RT-j9F" secondAttribute="bottom" id="FF1-Au-g8y"/>
-                            <constraint firstItem="jPg-B5-T2q" firstAttribute="top" secondItem="JP2-RT-j9F" secondAttribute="top" id="GkR-Hd-VB5"/>
-                            <constraint firstItem="jPg-B5-T2q" firstAttribute="top" secondItem="JP2-RT-j9F" secondAttribute="top" id="feP-dU-TMp"/>
-                            <constraint firstItem="jPg-B5-T2q" firstAttribute="trailing" secondItem="JP2-RT-j9F" secondAttribute="trailing" id="kXo-FT-xB8"/>
-                            <constraint firstItem="jPg-B5-T2q" firstAttribute="bottom" secondItem="JP2-RT-j9F" secondAttribute="bottom" id="qOD-Ub-NnA"/>
-                            <constraint firstItem="jPg-B5-T2q" firstAttribute="leading" secondItem="JP2-RT-j9F" secondAttribute="leading" id="rzf-UA-a3n"/>
+                            <constraint firstItem="JP2-RT-j9F" firstAttribute="bottom" secondItem="MJi-7c-HDJ" secondAttribute="bottom" id="GDI-9M-gDc"/>
+                            <constraint firstItem="JP2-RT-j9F" firstAttribute="trailing" secondItem="MJi-7c-HDJ" secondAttribute="trailing" id="Rna-hV-9oq"/>
+                            <constraint firstItem="MJi-7c-HDJ" firstAttribute="leading" secondItem="JP2-RT-j9F" secondAttribute="leading" id="tWd-cP-zpp"/>
+                            <constraint firstItem="MJi-7c-HDJ" firstAttribute="top" secondItem="JP2-RT-j9F" secondAttribute="top" id="tkD-2T-Tap"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="JP2-RT-j9F"/>
                     </view>
-                    <size key="freeformSize" width="1375" height="1667"/>
                     <connections>
-                        <outlet property="scrollView" destination="jPg-B5-T2q" id="aOi-ct-NKP"/>
-                        <outlet property="simulationView" destination="G5C-Gn-MO3" id="1hB-YR-brz"/>
+                        <outlet property="scrollView" destination="MJi-7c-HDJ" id="SdM-K3-emM"/>
+                        <outlet property="simulationView" destination="cJk-oS-esh" id="RM1-FE-10g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="30x-ub-4g5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1901.5999999999999" y="244.22788605697153"/>
+            <point key="canvasLocation" x="973.60000000000002" y="133.5832083958021"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="fuck" width="589" height="581"/>
-    </resources>
 </document>
