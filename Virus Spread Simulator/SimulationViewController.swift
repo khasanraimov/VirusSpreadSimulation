@@ -38,7 +38,9 @@ class SimulationViewController: UIViewController {
     
     @objc func labelTapped(_ sender: UITapGestureRecognizer) {
         if let label = sender.view as? UILabel {
-            label.backgroundColor = UIColor.red // Изменяем цвет фона на красный
+            label.backgroundColor = UIColor.white // Удаляем эту строку, если есть в вашем коде
+            label.layer.backgroundColor = UIColor.red.cgColor // Перекрашиваем метку в красный цвет
+            
         }
     }
 
@@ -62,6 +64,7 @@ class SimulationViewController: UIViewController {
     }
     
     func addLabels(count: Int, container: UIView) {
+        
         var xPosition: CGFloat = 20
         var yPosition: CGFloat = 20
         let labelWidth: CGFloat = 30
@@ -71,11 +74,13 @@ class SimulationViewController: UIViewController {
             let label = UILabel(frame: CGRect(x: xPosition, y: yPosition, width: labelWidth, height: labelHeight))
             label.text = "O"
             label.textAlignment = .center
+            label.backgroundColor = .white
             
             // Создаем UITapGestureRecognizer для label
             let tapGestureRecognizer = UITapGestureRecognizer(target: label, action: #selector(labelTapped(_:)))
             label.addGestureRecognizer(tapGestureRecognizer)
             label.isUserInteractionEnabled = true
+            label.setNeedsDisplay()
             
             container.addSubview(label)
             
